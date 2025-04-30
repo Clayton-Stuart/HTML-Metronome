@@ -1,1 +1,24 @@
+.controls{
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    background-color: grey;
+    border-radius: 50%;
+}
 
+.controls-container {
+    margin: 2em;
+}
+
+#pausebutton {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    background-color: red;
+    display: none;
+}
+
+#playbutton {
+    background-color: rgb(0, 168, 0);
+    display: block;
+    font-size: 1.5rem;
+}

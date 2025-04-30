@@ -1,0 +1,11 @@
+#row2 {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#light-dark > img{
+    max-width: 5rem;
+}
+

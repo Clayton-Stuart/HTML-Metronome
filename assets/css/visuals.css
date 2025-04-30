@@ -1,0 +1,26 @@
+#visual-container {
+    width: 10em;
+    height: 10em;
+    background-color: red;
+}
+
+/* #visual-beat-container {} */
+
+.visual-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+}
+
+.visual-cell {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+html body {
+    user-select: none;
+}

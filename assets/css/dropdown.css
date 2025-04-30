@@ -1,0 +1,103 @@
+/* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    width: 7rem;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+.dropdown-boxes {
+    display: flex;
+    flex-direction: row;
+}
+
+.separator {
+    font-size: 3em;
+    margin: 0;
+    font-weight: bolder;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+}
+
+.time-signature .subdivision{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dropdown-boxes-text {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.dropdown-content > a {
+    text-align: center;
+}
+
+.dropdown-images {
+    width: 1em;
+}
+
+.dropbtn > img {
+    filter: invert(100%);
+}
+
+#beat-unit-2 {
+    display: none;
+}
+
+#beat-unit-4 {
+    display: block;
+}
+
+#beat-unit-8 {
+    display: none;
+}
+
+#beat-unit-16 {
+    display: none;
+}
+
+#beat-unit-32 {
+    display: none;
+}
