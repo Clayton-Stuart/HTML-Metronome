@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Metronome</title>
+    <script src="assets/js/global-variables.js"></script>
+    <script src="assets/js/numpad-creator.js"></script>
+    <script src="assets/js/numpad-handler.js" defer></script>
+    <script src="assets/js/grid graphics.js" defer></script>
+    <script src="assets/js/controls.js" defer></script>
+    <script src="assets/js/dropdown-handler.js" defer></script>
+    <script src="assets/js/interval-handler.js" defer></script>
+    <script src="assets/js/beat-display.js" defer></script>
+    <script src="assets/js/setup.js" defer></script>
+    <script src="assets/js/dark-light.js" defer></script>
+    <link rel="stylesheet" href="assets/css/time.css">
+    <link rel="stylesheet" href="assets/css/dropdown.css">
+    <link rel="stylesheet" href="assets/css/controls.css">
+    <link rel="stylesheet" href="assets/css/visuals.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+
+    <div class="container-time">
+        <!------------    Time Signature Selector Dropdown    -------------->
+        <div class="time-signature">
+            <div class="dropdown-boxes-text">Time Signature</div>
+            <div class="dropdown-boxes">
+            <div class="dropdown">
+                <button id="numerator" class="dropbtn">4</button>
+                <div id="dropdown-content-1" class="dropdown-content">
+                </div>
+            </div>
+            <h1 class="separator">/</h1>
+            <div class="dropdown">
+                <button id="denominator" class="dropbtn">4</button>
+                <div id="dropdown-content-2" class="dropdown-content">
+                <a onclick="changeDenominator(this.innerText)">2</a>
+                <a onclick="changeDenominator(this.innerText)">4</a>
+                <a onclick="changeDenominator(this.innerText)">8</a>
+                <a onclick="changeDenominator(this.innerText)">16</a>
+                <a onclick="changeDenominator(this.innerText)">32</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!------------------------------------------------------------------->
+
+
+        <!------------    Subdivision Selector Dropdown    -------------->
+        <div class="subdivision">
+            <div class="dropdown-boxes-text">Subdivision</div>
+            <div class="dropdown-boxes">
+            <div class="dropdown">
+                <button id="subdivision" class="dropbtn"><img value="0" class="dropdown-images" style="width: 0.5rem;" src="./assets/images/quarter_note_black.png"></button>
+                <div id="dropdown-content-3" class="dropdown-content">
+                <a onclick="changeSubdivision(this.innerHTML)"><img value="" class="dropdown-images" style="width: 0.5rem;" src="./assets/images/quarter_note_black.png"></a>
+                <a onclick="changeSubdivision(this.innerHTML)"><img value="329.63" class="dropdown-images" style="width: 1.5rem;" src="./assets/images/eighth notes.png"></a>
+                <a onclick="changeSubdivision(this.innerHTML)"><img value="329.63,329.63" class="dropdown-images" style="width: 1.65rem;" src="./assets/images/triplets.png"></a>
+                <a onclick="changeSubdivision(this.innerHTML)"><img value="329.63,329.63,329.63" class="dropdown-images" style="width: 2rem;" src="./assets/images/sixteenth notes.png"></a>
+                <a onclick="changeSubdivision(this.innerHTML)"><img value="0,0,329.63" class="dropdown-images" style="width: 3.2rem;" src="./assets/images/sixteenth note eighth rest sixteenth note.png"></a>
+                
+            </div>
+            </div>
+            </div>
+        </div>
+        <!------------------------------------------------------------------->
+
+        <!---------------------------------------------------------------->
+        <div id="beat-unit-2">
+            <div class="dropdown-boxes-text">Beat Unit</div>
+            <div class="dropdown-boxes">
+            <div class="dropdown">
+                <button id="beat-equals" class="dropbtn"><img value="1" style="width: 0.52rem;" class="dropdown-images" src="./assets/images/half note.png"></button>
+                <div id="dropdown-content-3" class="dropdown-content">
+                <a onclick="changeBeatUnit(this)"><img value='0.5' style="width: 0.5rem;" class="dropdown-images" src="./assets/images/quarter_note_black.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value='1' style="width: 0.52rem;" class="dropdown-images" src="./assets/images/half note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="2" style="width: 2.33rem; transform: scale(0.5);" class="dropdown-images" src="./assets/images/whole note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="3" style="width: 4rem; transform: scale(0.5);" class="dropdown-images" src="./assets/images/dotted whole note.png"></a>
+                
+            </div>
+            </div>
+            </div>
+        </div>
+
+
+        <div id="beat-unit-4">
+            <div class="dropdown-boxes-text">Beat Unit</div>
+            <div class="dropdown-boxes">
+            <div class="dropdown">
+                <button id="beat-equals" class="dropbtn"><img value="1" style="width: 0.5rem;" class="dropdown-images" src="./assets/images/quarter_note_black.png"></button>
+                <div id="dropdown-content-3" class="dropdown-content">
+                <a onclick="changeBeatUnit(this)"><img value="0.5" style="width: 1.28rem;" class="dropdown-images" src="./assets/images/eighth note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="1" style="width: 0.5rem;" class="dropdown-images" src="./assets/images/quarter_note_black.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="2" style="width: 0.52rem;" class="dropdown-images" src="./assets/images/half note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="3" style="width: 0.76rem;" class="dropdown-images" src="./assets/images/dotted half note.png"></a>
+                
+            </div>
+            </div>
+            </div>
+        </div>
+
+
+        <div id="beat-unit-8">
+            <div class="dropdown-boxes-text">Beat Unit</div>
+            <div class="dropdown-boxes">
+            <div class="dropdown">
+                <button id="beat-equals" class="dropbtn"><img value="3" style="width: 0.83rem;" class="dropdown-images" src="./assets/images/dotted quarter note.png"></button>
+                <div id="dropdown-content-3" class="dropdown-content">
+                <a onclick="changeBeatUnit(this)"><img value="1" style="width: 1.28rem;" class="dropdown-images" src="./assets/images/eighth note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="2" style="width: 0.5rem;" class="dropdown-images" src="./assets/images/quarter_note_black.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="3" style="width: 0.83rem;" class="dropdown-images" src="./assets/images/dotted quarter note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="4" style="width: 0.52rem;" class="dropdown-images" src="./assets/images/half note.png"></a>
+                
+            </div>
+            </div>
+            </div>
+        </div>
+
+
+        <div id="beat-unit-16">
+            <div class="dropdown-boxes-text">Beat Unit</div>
+            <div class="dropdown-boxes">
+            <div class="dropdown">
+                <button id="beat-equals" class="dropbtn"><img value="1" style="width: 0.9rem;" class="dropdown-images" src="./assets/images/sixteenth note.png"></button>
+                <div id="dropdown-content-3" class="dropdown-content">
+                <a onclick="changeBeatUnit(this)"><img value="1" style="width: 0.9rem;" class="dropdown-images" src="./assets/images/sixteenth note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="2" style="width: 1.28rem;" class="dropdown-images" src="./assets/images/eighth note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="3" style="width: 1.13rem;" class="dropdown-images" src="./assets/images/dotted eighth note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="4" style="width: 0.5rem;" class="dropdown-images" src="./assets/images/quarter_note_black.png"></a>
+                
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <div id="beat-unit-32">
+            <div class="dropdown-boxes-text">Beat Unit</div>
+            <div class="dropdown-boxes">
+            <div class="dropdown">
+                <button id="beat-equals" class="dropbtn"><img value="1" style="width: 1.4rem;" class="dropdown-images" src="./assets/images/thirtysecond note.png"></button>
+                <div id="dropdown-content-3" class="dropdown-content">
+                <a onclick="changeBeatUnit(this)"><img value="1" style="width: 1.4rem;" class="dropdown-images" src="./assets/images/thirtysecond note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="2" style="width: 0.9rem;" class="dropdown-images" src="./assets/images/sixteenth note.png"></a>
+                <a onclick="changeBeatUnit(this)"><img value="3" style="width:1.1rem;" class="dropdown-images" src="./assets/images/dotted sixteenth note.svg"></a>
+                <a onclick="changeBeatUnit(this)"><img value="4" style="width: 1.28rem;" class="dropdown-images" src="./assets/images/eighth note.png"></a>
+                
+            </div>
+            </div>
+            </div>
+        </div>
+        <!---------------------------------------------------------------->
+        <button onclick="toggleDarkMode();" type="button" id="light-dark" style="border-style: none; background-color: transparent;"><img src="./assets/images/light-dark.png"></button>
+    </div>
+
+
+    <div id="row2">
+        <!----------   Tempo Numpad Selector   ---------->
+        <div id="numpad">
+            <p id="numpad-title">Tempo</p>
+            <div id="tempo-numpad"></div>
+        </div>
+        <!------------------------------------------------------------------->
+
+
+        <button style="color: #fff; font-weight: 100; background-color: rgb(176, 0, 82);" onclick="changeBeepLength(prompt('Enter Beep Length in second (max = 0.5, default is 0.05)'))" id="beep-length" class="controls">Change Beep Length</button>
+
+
+    <div id="controls-container">
+        <button onclick="play()" id="playbutton" class="controls">
+            ▶
+        </button>
+        <button onclick="pause()" id="pausebutton" class="controls">
+            ||
+        </button>
+    </div>
+
+
+    <!-- <div id="visual-container"></div> -->
+    <div id="visual-beat-container"></div>
+
+    </div>
+
+</body>
+</html>
